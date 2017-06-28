@@ -8,6 +8,8 @@
 // currently only a single format "generate" method is provided
 // 
 //==============================================
+
+//import the random number generator class
 import java.util.Random;
 
 public class UserNameGenerator {
@@ -16,7 +18,7 @@ public class UserNameGenerator {
 	private Random numberGenerator;
 
 	//since the class can be re-used initialize the random number generator in the constructor
-	//we could have made the generate method static, and put this initialization there 
+	//could have made the generate method static, and put this initialization there 
 	//but that's not as friendly should we desire unit tests or need to refactor 
 	//this class to provide more formats
 	public UserNameGenerator() {
@@ -39,7 +41,7 @@ public class UserNameGenerator {
 		generatedName = firstName.substring(0, 1).toUpperCase() 	//first initial upper cased
 					+ lastName.substring(0, 1).toUpperCase() 		//first letter of last name upper cased
 					+ lastName.substring(1, 
-							Math.min(5,  lastName.length())) 		//up to 4 characters of last name
+							Math.min(5,  lastName.length())) 		//up to 4 more characters of last name
 					+ numberSuffix; 								//and the random number
 
 		//return the result to the caller

@@ -45,11 +45,22 @@ public class UserNameGeneratorRunner {
 			if (lastName.equals("quit")) {
 				break;
 			}
+			
+			if (firstName.equals("") || lastName.equals("")) {
+				
+				//if the user just hit enter instead of typing a name, tell them to try again
+				System.out.println("Please provide both a first and last name");
+				
+			} else {
+				
+				System.out.print("Generated username is: ");
 
-			System.out.print("Generated username is: ");
+				// print the generated name
+				System.out.println(nameGenerator.generate(firstName,  lastName));
 
-			// print the generated name
-			System.out.println(nameGenerator.generate(firstName,  lastName));
+			}
+
+			
 			//add a blank line to break up the output in the loop
 			System.out.println();
 		}
@@ -57,7 +68,5 @@ public class UserNameGeneratorRunner {
 		inputReader.close();
 		//and say Goodbye!
 		System.out.println("Goodbye!");
-
 	}
-
 }
